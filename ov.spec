@@ -46,6 +46,9 @@ Source:         %{gosource}
 %if %{without bootstrap}
 %build
 %gobuild -o %{gobuilddir}/bin/ov %{goipath}
+%{gobuilddir}/bin/%{name} completion bash > %{name}.bash
+%{gobuilddir}/bin/%{name} completion fish > %{name}.fish
+%{gobuilddir}/bin/%{name} completion zsh  > %{name}.zsh
 %endif
 
 %install
@@ -53,6 +56,9 @@ Source:         %{gosource}
 %if %{without bootstrap}
 install -m 0755 -vd                     %{buildroot}%{_bindir}
 install -m 0755 -vp %{gobuilddir}/bin/* %{buildroot}%{_bindir}/
+install -Dpm 0644 %{name}.bash %{buildroot}%{bash_completions_dir}/%{name}
+install -Dpm 0644 %{name}.fish %{buildroot}%{fish_completions_dir}/%{name}.fish
+install -Dpm 0644 %{name}.zsh  %{buildroot}%{zsh_completions_dir}/_%{name}
 %endif
 
 %if %{without bootstrap}
@@ -67,6 +73,9 @@ install -m 0755 -vp %{gobuilddir}/bin/* %{buildroot}%{_bindir}/
 %license LICENSE
 %doc docs examples CODE_OF_CONDUCT.md README.md
 %{_bindir}/ov
+%{bash_completions_dir}/%{name}
+%{fish_completions_dir}/%{name}.fish	
+%{zsh_completions_dir}/_%{name}
 %endif
 
 %gopkgfiles

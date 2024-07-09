@@ -17,9 +17,9 @@ Version:                1.3.0
 Terminal string styling for go done right, with full and painless Windows 10
 support.}
 
-%global golicenses      LICENSE LICENSE-chalk pkg/ansistyles/LICENSE\\\
+%global golicenses      LICENSE LICENSE-chalk pkg/ansistyles/LICENSE-ansistyles\\\
                         pkg/ansistyles/LICENSE-ansi-styles
-%global godocs          README.md architecture.md pkg/ansistyles/README.md
+%global godocs          README.md architecture.md pkg/ansistyles/README-ansistyles.md
 
 Name:           golang-github-jwalton-gchalk
 Release:        %autorelease
@@ -36,6 +36,9 @@ Source:         %{gosource}
 %prep
 %goprep -A
 %autopatch -p1
+
+mv pkg/ansistyles/LICENSE pkg/ansistyles/LICENSE-ansistyles
+mv pkg/ansistyles/README.md pkg/ansistyles/README-ansistyles.md
 
 %if %{without bootstrap}
 %generate_buildrequires

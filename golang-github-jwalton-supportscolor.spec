@@ -17,7 +17,7 @@ Version:                1.2.0
 Detects whether a terminal supports color, and enables ANSI color support in
 recent Windows 10 builds.}
 
-%global golicenses      LICENSE pkg/hasFlag/LICENSE
+%global golicenses      LICENSE pkg/hasFlag/LICENSE-hasFlag
 %global godocs          README.md
 
 Name:           golang-github-jwalton-supportscolor
@@ -35,6 +35,8 @@ Source:         %{gosource}
 %prep
 %goprep -A
 %autopatch -p1
+
+mv pkg/hasFlag/LICENSE pkg/hasFlag/LICENSE-hasFlag
 
 %if %{without bootstrap}
 %generate_buildrequires

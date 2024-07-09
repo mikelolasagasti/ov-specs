@@ -15,8 +15,7 @@ Version:                0.3.4
 %gometa -L -f
 
 %global common_description %{expand:
-Guess the width (fwf) output without delimiters in commands that output to the
-terminal.}
+Guess the width (fwf) output without delimiters in commands.}
 
 %global golicenses      LICENSE
 %global godocs          docs README.md

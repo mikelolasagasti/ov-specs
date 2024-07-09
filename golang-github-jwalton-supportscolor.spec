@@ -14,15 +14,14 @@ Version:                1.2.0
 %gometa -L -f
 
 %global common_description %{expand:
-Detects whether a terminal supports color, and enables ANSI color support in
-recent Windows 10 builds.}
+Golang library to detect whether a terminal supports color.}
 
 %global golicenses      LICENSE pkg/hasFlag/LICENSE-hasFlag
 %global godocs          README.md
 
 Name:           golang-github-jwalton-supportscolor
 Release:        %autorelease
-Summary:        Detects whether a terminal supports color, and enables ANSI color support in recent Windows 10 builds
+Summary:        Golang library to detect whether a terminal supports color
 
 License:        MIT
 URL:            %{gourl}

@@ -14,8 +14,7 @@ Version:                1.3.0
 %gometa -L -f
 
 %global common_description %{expand:
-Terminal string styling for go done right, with full and painless Windows 10
-support.}
+Terminal string styling for go.}
 
 %global golicenses      LICENSE LICENSE-chalk pkg/ansistyles/LICENSE-ansistyles\\\
                         pkg/ansistyles/LICENSE-ansi-styles
@@ -23,7 +22,7 @@ support.}
 
 Name:           golang-github-jwalton-gchalk
 Release:        %autorelease
-Summary:        Terminal string styling for go done right, with full and painless Windows 10 support
+Summary:        Terminal string styling for go
 
 License:        MIT
 URL:            %{gourl}

@@ -10,7 +10,7 @@
 
 # https://github.com/noborus/guesswidth
 %global goipath         github.com/noborus/guesswidth
-Version:                0.3.4
+Version:                0.4.0
 
 %gometa -L -f
 

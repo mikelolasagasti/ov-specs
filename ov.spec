@@ -46,9 +46,9 @@ Source:         %{gosource}
 %if %{without bootstrap}
 %build
 %gobuild -o %{gobuilddir}/bin/ov %{goipath}
-%{gobuilddir}/bin/%{name} completion bash > %{name}.bash
-%{gobuilddir}/bin/%{name} completion fish > %{name}.fish
-%{gobuilddir}/bin/%{name} completion zsh  > %{name}.zsh
+%{gobuilddir}/bin/%{name} --completion bash > %{name}.bash
+%{gobuilddir}/bin/%{name} --completion fish > %{name}.fish
+%{gobuilddir}/bin/%{name} --completion zsh  > %{name}.zsh
 %endif
 
 %install
